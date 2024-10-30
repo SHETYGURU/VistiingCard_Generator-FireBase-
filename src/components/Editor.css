@@ -1,0 +1,174 @@
+/* Overall Layout */
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .editor-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Template Preview */
+.template-preview {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Template 1 Styling */
+.template1 {
+  background-size: cover;
+  color: white;
+  width: 400px; /* Reduced from 500px */
+  height: 240px; /* Reduced from 300px */
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+}
+
+.template1 .logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px; /* Reduced from 50px */
+}
+
+.template1 .name {
+  font-size: 20px; /* Reduced from 24px */
+  font-weight: bold;
+}
+
+.template1 .contact-info {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Template 2 Styling */
+.template2 {
+  background-size: cover;
+  background-position: center;
+  color: #222;
+  width: 400px; /* Reduced from 500px */
+  height: 240px; /* Reduced from 300px */
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+}
+
+.template2 .logo {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 56px; /* Reduced from 70px */
+}
+
+.template2 .name {
+  font-size: 18px; /* Reduced from 22px */
+  color: #444;
+  font-weight: bold;
+}
+
+.template2 .contact-info {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Template 3 Styling */
+.template3 {
+  background-size: cover;
+  color: #333;
+  width: 400px; /* Reduced from 500px */
+  height: 240px; /* Reduced from 300px */
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.template3 .logo {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 48px; /* Reduced from 60px */
+}
+
+.template3 .name {
+  font-size: 21px; /* Reduced from 26px */
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.template3 .company {
+  font-size: 14px; /* Reduced from 18px */
+  color: #555;
+}
+
+.template3 .contact-info {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+/* Editor Styling */
+.editor {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.editor h2 {
+  font-size: 16px; /* Reduced from 20px */
+  font-weight: bold;
+  color: #333;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 12px; /* Reduced from 14px */
+  color: #666;
+}
+
+.text-input {
+  padding: 6px; /* Reduced from 8px */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 12px; /* Reduced from 14px */
+}
+
+.file-input {
+  padding: 6px; /* Reduced from 8px */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 12px; /* Reduced from 14px */
+  background-color: #ffffff;
+}

@@ -1,0 +1,39 @@
+/* template1.css */
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/path-to/design1.PNG'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .text-content {
+    position: absolute;
+    text-align: center;
+    width: 80%; /* Adjust as needed for alignment */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem; /* Adjust for size based on image 1 */
+    font-weight: 500;
+    line-height: 1.5;
+    top: 40%; /* Adjust to align properly */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .text-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-content p {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+  

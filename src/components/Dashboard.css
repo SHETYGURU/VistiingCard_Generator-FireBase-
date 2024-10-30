@@ -1,0 +1,152 @@
+/* Page background and color for dark/light mode */
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  body.light {
+    background-color: #f3f4f6;
+    color: #333333;
+  }
+  
+  /* Navbar styles */
+  nav {
+    padding: 1rem;
+    background-color: var(--navbar-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav .company-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .company-logo img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+  }
+  
+  nav .company-logo span {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  nav button {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    color: inherit;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  nav button:hover {
+    color: #718096; /* Lighter gray on hover */
+  }
+  
+  /* Mobile Menu */
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    background: var(--navbar-bg);
+    padding: 1rem;
+  }
+  
+  .mobile-menu button {
+    margin-bottom: 0.5rem;
+    width: 100%;
+    text-align: left;
+  }
+  
+  /* Dark/Light Toggle */
+  .toggle-container {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+  
+  .toggle-container label {
+    position: relative;
+    width: 2.75rem;
+    height: 1.5rem;
+  }
+  
+  .toggle-container input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggle-container .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 9999px;
+  }
+  
+  .toggle-container input:checked + .slider {
+    background-color: #4a5568;
+  }
+  
+  .toggle-container .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: #fff;
+    border-radius: 50%;
+    bottom: 2px;
+    left: 4px;
+    transition: 0.4s;
+  }
+  
+  .toggle-container input:checked + .slider:before {
+    transform: translateX(1.25rem);
+  }
+  
+  /* Main Content */
+  .main-content {
+    max-width: 48rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  body.dark .main-content {
+    background-color: #1a202c;
+  }
+  
+  /* Section Headers */
+  .section-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--header-color);
+  }
+  
+  body.dark .section-header {
+    color: #edf2f7;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    nav button {
+      display: none; /* Hide desktop menu items */
+    }
+    
+    .mobile-menu {
+      display: flex; /* Show mobile menu */
+    }
+  }
+  
