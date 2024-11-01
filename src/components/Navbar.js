@@ -33,7 +33,7 @@ const Navbar = () => {
     <nav className="p-4 flex justify-between items-center bg-white shadow-md">
       <div className="flex items-center">
         <img src="/assets/logo.png" alt="Company Logo" className="w-8 h-8 mr-2" />
-        <span className="text-lg font-semibold">Visiting Card Maker</span>
+        <span className="text-lg font-semibold">Visiting Card Generator</span>
       </div>
       <div className="hidden md:flex items-center space-x-4">
         <button

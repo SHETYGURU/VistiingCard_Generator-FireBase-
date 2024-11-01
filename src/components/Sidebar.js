@@ -34,7 +34,7 @@ const Sidebar = () => {
       {/* Logo and App Title */}
       <div className="flex items-center mb-8">
         <img src="/assets/logo.png" alt="Company Logo" className="w-8 h-8 mr-2" />
-        <span className="text-lg font-semibold">Visiting Card Maker</span>
+        <span className="text-lg font-semibold">Visiting Card Generator</span>
       </div>
 
       {/* Navigation Links */}

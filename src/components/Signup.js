@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './customStyles.css';
+import '../css/customStyles.css';
 import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";

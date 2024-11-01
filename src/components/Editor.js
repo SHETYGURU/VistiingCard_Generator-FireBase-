@@ -10,10 +10,10 @@ import firebaseConfig from "./connection_db";
 import { initializeApp } from "firebase/app";
 import Alert from "./Alert";
 import Navbar from "./Navbar"
-import "./Editor.css";
-import "./template1.css";
-import "./template2.css";
-import "./template3.css";
+import "../css/Editor.css";
+import "../css/template1.css";
+import "../css/template2.css";
+import "../css/template3.css";
 import preview1 from '../assets/design1.PNG';
 import preview2 from '../assets/design2.PNG';
 import preview3 from '../assets/design3.PNG';
