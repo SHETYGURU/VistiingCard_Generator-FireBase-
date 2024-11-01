@@ -1,6 +1,6 @@
 Here’s a sample `README.md` file for your project that explains how the application works, along with steps for using it:
 
-```markdown
+
 # Template Creator
 
 This application allows users to easily create and customize templates, download their creations, and save them for later access in their profile.
