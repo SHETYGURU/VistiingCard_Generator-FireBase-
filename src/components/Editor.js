@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import { useParams } from "react-router-dom";
-import { FiPhone, FiGlobe, FiMapPin, FiMail } from "react-icons/fi";
 import { FacebookShareButton, TwitterShareButton, WhatsappShareButton, EmailShareButton } from "react-share";
 import { FaFacebookF, FaTwitter, FaWhatsapp, FaEnvelope, FaLink } from "react-icons/fa"; // Import FaLink for Copy Link
 import html2canvas from "html2canvas";
@@ -10,10 +9,17 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import firebaseConfig from "./connection_db"; 
 import { initializeApp } from "firebase/app";
 import Alert from "./Alert";
+import Navbar from "./Navbar"
 import "./Editor.css";
+import "./template1.css";
+import "./template2.css";
+import "./template3.css";
 import preview1 from '../assets/design1.PNG';
 import preview2 from '../assets/design2.PNG';
 import preview3 from '../assets/design3.PNG';
+import brandLogo from '../assets/brand.png'; 
+import template2Logo from '../assets/brand2.png'; 
+
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -25,6 +31,8 @@ function Editor() {
     setAlertMessage(message);
   };
   const { templateId } = useParams();
+  const defaultLogo =
+    templateId === "1" ? brandLogo :  template2Logo;
   const [cardDetails, setCardDetails] = useState({
     name: "Your Name",
     position: "Your Position",
@@ -33,7 +41,7 @@ function Editor() {
     website: "www.yourweb.com",
     address: "123 street down xt, 43 garden LA",
     email: "Email@info.com",
-    logoUrl: "",
+    logoUrl: defaultLogo, // Set the default logo
   });
   
   const [showSharePopup, setShowSharePopup] = useState(false);
@@ -62,32 +70,56 @@ function Editor() {
       case "1":
         return (
           <div className="card-template template1" style={{ backgroundImage: `url(${preview1})` }}>
-            <img src={cardDetails.logoUrl} alt="Logo" className="logo" />
-            <h2 className="name">{cardDetails.name}</h2>
-            <p className="position">{cardDetails.position}</p>
-            <p className="company">{cardDetails.company}</p>
-            <div className="contact-info">
-              <p><FiPhone /> {cardDetails.phone}</p>
-              <p><FiGlobe /> {cardDetails.website}</p>
-              <p><FiMapPin /> {cardDetails.address}</p>
-              <p><FiMail /> {cardDetails.email}</p>
-            </div>
-          </div>
+          <img src={cardDetails.logoUrl} alt="Logo" className="logo" />
+          <h2 className="name">{cardDetails.name}</h2>
+          <p className="position">{cardDetails.position || '\u00A0'}</p>
+          <p className="company">{cardDetails.company || '\u00A0'}</p>
+          <div className="contact-info">
+            <p className="phone">{cardDetails.phone || '\u00A0'}</p>
+            <p className="website">{cardDetails.website || '\u00A0'}</p>
+            <p className="email">{cardDetails.email || '\u00A0'}</p>
+         
+            <p className="address">
+  {cardDetails.address
+    ? cardDetails.address.split(",").map((part, index) => (
+        <span key={index}>
+          {part.trim()}
+          {index < cardDetails.address.split(",").length - 1 && <br />}
+        </span>
+      ))
+    : '\u00A0'}
+</p>
+
+      
+  </div>
+</div>
+
         );
-      case "2":
-        return (
-          <div className="card-template template2" style={{ backgroundImage: `url(${preview2})` }}>
-            <img src={cardDetails.logoUrl} alt="Logo" className="logo" />
-            <h2 className="company">{cardDetails.company}</h2>
-            <h3 className="name">{cardDetails.name}</h3>
-            <p className="position">{cardDetails.position}</p>
-            <div className="contact-info">
-              <p><FiPhone /> {cardDetails.phone}</p>
-              <p><FiGlobe /> {cardDetails.website}</p>
-              <p><FiMail /> {cardDetails.email}</p>
+        case "2":
+          return (
+            <div className="card-template template2" style={{ backgroundImage: `url(${preview2})` }}>
+              <img src={cardDetails.logoUrl} alt="Logo" className="logo" />
+              <h2 className="company">{cardDetails.company}</h2>
+              <h3 className="name">{cardDetails.name}</h3>
+              <p className="position">{cardDetails.position}</p>
+              <div className="contact-info">
+                <p>
+                  {cardDetails.address
+                    ? cardDetails.address.split(",").map((part, index) => (
+                        <span key={index}>
+                          {part.trim()}
+                          {index < cardDetails.address.split(",").length - 1 && <br />}
+                        </span>
+                      ))
+                    : '\u00A0'}
+                </p>
+                <p>{cardDetails.phone}</p>
+                <p>{cardDetails.website}</p>
+                <p>{cardDetails.email}</p>
+              </div>
             </div>
-          </div>
-        );
+          );
+        
       case "3":
         return (
           <div className="card-template template3" style={{ backgroundImage: `url(${preview3})` }}>
@@ -96,9 +128,10 @@ function Editor() {
             <h3 className="company">{cardDetails.company}</h3>
             <img src={cardDetails.logoUrl} alt="Logo" className="logo template3-logo" />
             <div className="contact-info">
-              <p><FiPhone /> {cardDetails.phone}</p>
-              <p><FiMapPin /> {cardDetails.address}</p>
-              <p><FiMail /> {cardDetails.email}</p>
+              <p> {cardDetails.phone}</p>
+              <p>{cardDetails.website}</p>
+              <p> {cardDetails.email}</p>
+              <p > {cardDetails.address}</p>
             </div>
           </div>
         );
@@ -177,7 +210,8 @@ function Editor() {
   };
 
   return (
-    
+    <div  style={{ zIndex: 999 }}>
+      <Navbar />
     <div className="editor-container">
            
 
@@ -253,6 +287,8 @@ function Editor() {
       {alertMessage && <Alert message={alertMessage} onClose={() => setAlertMessage("")} />}
 
     </div>
+    </div>
+
   );
 }
 

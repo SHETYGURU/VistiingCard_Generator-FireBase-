@@ -67,8 +67,11 @@ const ProfileComponent = () => {
   };
 
   return (
+    <div>
+            <Navbar />
+
+    
     <div className="flex flex-col items-center p-4">
-      <Navbar />
 
       <h1 className="text-2xl font-semibold mb-6">Welcome....</h1>
       <div className="bg-white p-4 rounded-lg shadow-md w-full max-w-md text-center mb-8">
@@ -128,6 +131,7 @@ const ProfileComponent = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

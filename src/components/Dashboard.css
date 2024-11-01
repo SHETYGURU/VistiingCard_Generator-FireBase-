@@ -149,4 +149,10 @@ body.dark {
       display: flex; /* Show mobile menu */
     }
   }
-  
+  /* Tailwind CSS classes for responsive styling are applied directly to elements */
+
+@media (max-width: 1024px) {
+  .navbar, .sidebar {
+    width: 100%;
+  }
+}

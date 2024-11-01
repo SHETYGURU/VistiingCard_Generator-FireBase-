@@ -28,8 +28,11 @@ function Templates() {
   ];
 
   return (
+    <div>
+        <Navbar />
+   
     <div className="flex flex-col items-center p-8">
-            <Navbar />
+          
 
       <h2 className="text-2xl font-bold mb-8 text-center">Select a Visiting Card Template</h2>
       <div className="template-list grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -48,6 +51,7 @@ function Templates() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }
