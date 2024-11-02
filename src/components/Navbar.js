@@ -30,7 +30,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="p-4 flex justify-between items-center bg-white shadow-md">
+    <nav className="p-4 flex justify-between items-center bg-white shadow-md " >
       <div className="flex items-center">
         <img src="/assets/logo.png" alt="Company Logo" className="w-8 h-8 mr-2" />
         <span className="text-lg font-semibold">Visiting Card Generator</span>
@@ -65,7 +65,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-white p-4 shadow-lg rounded-b-lg md:hidden">
+        <div className="absolute top-16 left-0 right-0 bg-white p-4 shadow-lg rounded-b-lg md:hidden" >
           <button
             onClick={() => navigate('/dashboard')}
             className="flex items-center mb-2 w-full hover:text-gray-500"

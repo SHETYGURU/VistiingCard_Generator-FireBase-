@@ -100,8 +100,8 @@ function Editor() {
             <div className="card-template template2" style={{ backgroundImage: `url(${preview2})` }}>
               <img src={cardDetails.logoUrl} alt="Logo" className="logo" />
               <h2 className="company">{cardDetails.company}</h2>
-              <h3 className="name">{cardDetails.name}</h3>
-              <p className="position">{cardDetails.position}</p>
+              <h3 className="name">{cardDetails.name || '\u00A0'}</h3>
+              <p className="position">{cardDetails.position || '\u00A0'}</p>
               <div className="contact-info">
                 <p>
                   {cardDetails.address
@@ -113,9 +113,9 @@ function Editor() {
                       ))
                     : '\u00A0'}
                 </p>
-                <p>{cardDetails.phone}</p>
-                <p>{cardDetails.website}</p>
-                <p>{cardDetails.email}</p>
+                <p>{cardDetails.phone || '\u00A0'}</p>
+                <p>{cardDetails.website || '\u00A0'}</p>
+                <p>{cardDetails.email || '\u00A0'}</p>
               </div>
             </div>
           );
@@ -124,14 +124,14 @@ function Editor() {
         return (
           <div className="card-template template3" style={{ backgroundImage: `url(${preview3})` }}>
             <h2 className="name">{cardDetails.name}</h2>
-            <p className="position">{cardDetails.position}</p>
-            <h3 className="company">{cardDetails.company}</h3>
+            <p className="position">{cardDetails.position || '\u00A0'}</p>
+            <h3 className="company">{cardDetails.company || '\u00A0'}</h3>
             <img src={cardDetails.logoUrl} alt="Logo" className="logo template3-logo" />
-            <div className="contact-info">
-              <p> {cardDetails.phone}</p>
-              <p>{cardDetails.website}</p>
-              <p> {cardDetails.email}</p>
-              <p > {cardDetails.address}</p>
+            <div className="contact-info"> 
+              <p> {cardDetails.phone || '\u00A0'}</p>
+              <p>{cardDetails.website || '\u00A0'}</p>
+              <p> {cardDetails.email || '\u00A0'}</p>
+              <p > {cardDetails.address || '\u00A0'}</p>
             </div>
           </div>
         );
