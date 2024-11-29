@@ -1,4 +1,4 @@
-# Template Creator
+# Live Demo
 
 [Live Demo](https://visitingcardgenerator.netlify.app/)
 
