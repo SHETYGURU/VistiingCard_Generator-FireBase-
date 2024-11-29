@@ -1,10 +1,12 @@
-# Live Demo
 
-[Live Demo](https://visitingcardgenerator.netlify.app/)
 
 # Template Creator
 
 This application allows users to easily create and customize templates, download their creations, and save them for later access in their profile.
+
+## Live Demo
+
+[Live Demo](https://visitingcardgenerator.netlify.app/)
 
 ## How It Works
 
