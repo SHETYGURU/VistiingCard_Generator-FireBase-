@@ -44,7 +44,7 @@ const Login = () => {
 
     } catch (error) {
       console.error('Sign-in with Google error:', error.message);
-    } finally {
+    } finally { 
       setLoading(false);
     }
   };
@@ -146,6 +146,7 @@ const Login = () => {
 
           <p className="mt-6 text-center text-xs text-gray-600">
             Don’t have an account? <a href="/signup" className="text-blue-500 hover:underline">Sign up</a>
+            
           </p>
           <p className="mt-2 text-center text-xs text-gray-600">
             <a href="/forgot-password" className="text-blue-500 hover:underline">Forgot your password?</a>
